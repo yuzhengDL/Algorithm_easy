@@ -30,3 +30,15 @@ class Solution(object):
         """
         
         return return sorted(s) == sorted(t)
+
+/*
+思路：以26个英文字母为基础构建哈希表，通过比较哈希表来得到结果
+ord()：以一个字符作为参数，返回对应的ASCII数值
+*/
+def isAnagram2(self, s, t):
+    dic1, dic2 = [0]*26, [0]*26
+    for item in s:
+        dic1[ord(item)-ord('a')] += 1
+    for item in t:
+        dic2[ord(item)-ord('a')] += 1
+    return dic1 == dic2
