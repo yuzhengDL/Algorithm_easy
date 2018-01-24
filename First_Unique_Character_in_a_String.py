@@ -20,7 +20,7 @@ class Solution(object):
 
 
 /*
-改进：利用count()方法统计字符串哩某个字符的出现次数
+改进：利用python中特有的count()方法统计字符串里某个字符的出现次数
 */
 def firstUniqChar(self, s):
     """
