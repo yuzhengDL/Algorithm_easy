@@ -15,14 +15,13 @@ class Solution(object):
         :rtype: ListNode
         """
         
-        slow = None
+        node = None
         while head:
-            curr = head
-            head = head.next
-            temp = slow
-            slow = curr
-            curr.next = temp
-        return slow
+            nxt = head.next
+            head.next = node
+            node = head
+            head = nxt
+        return head
 
 
 /*
