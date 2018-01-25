@@ -25,3 +25,28 @@ class Solution(object):
                 return True
         return False
 
+/*
+思路：哈希表（在python中是字典）。通过哈希表存储曾经访问过的结点，若此时存在已经被访问过的结点，则代表存在循环
+注意：16个测试样例通过了13个，剩下的都超时了，说明dict在该问题中并不实用
+*/
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def hasCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        
+        dic = {}
+        while head:
+            if head not in dic.keys():
+                dic[head] = 1
+                head = head.next
+            else:
+                return True
+        return False
